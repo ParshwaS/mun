@@ -6,7 +6,7 @@ const Booking = mongoose.model('booking')
 
 module.exports = function (app, io) {
 
-	app.post('/bookings/new', (req, res) => {
+	app.post('/api/bookings/new', (req, res) => {
 		var decoded = false;
 		if (req.headers.Authorization) {
 			decoded = jwt.verify(req.headers.Authorization, config.secret);
@@ -24,7 +24,7 @@ module.exports = function (app, io) {
 		}
 	});
 
-	app.post('/bookings/modify', (req, res)=>{
+	app.post('/api/bookings/modify', (req, res)=>{
 		var decoded = false;
 		if (req.headers.Authorization) {
 			decoded = jwt.verify(req.headers.Authorization, config.secret);
@@ -40,7 +40,7 @@ module.exports = function (app, io) {
 		}
 	});
 
-	app.post('/bookings/pay', (req, res)=>{
+	app.post('/api/bookings/pay', (req, res)=>{
 		var decoded = false;
 		if (req.headers.Authorization) {
 			decoded = jwt.verify(req.headers.Authorization, config.secret);

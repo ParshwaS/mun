@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const Feedback = mongoose.model('feedback')
 
 module.exports = function (app, io) {
-	app.post('/feedback/add', (req, res)=>{
+	app.post('/api/feedback/add', (req, res)=>{
 		var decoded = false;
 		if (req.headers.Authorization) {
 			decoded = jwt.verify(req.headers.Authorization, config.secret);

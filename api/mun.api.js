@@ -5,7 +5,7 @@ const MUN = mongoose.model('mun')
 const Booking = mongoose.model('booking')
 
 module.exports = function (app, io) {
-	app.get('/mun/list/city', (req, res) => {
+	app.get('/api/mun/list/city', (req, res) => {
 		var decoded = false;
 		if (req.headers.Authorization) {
 			decoded = jwt.verify(req.headers.Authorization, config.secret);
@@ -20,7 +20,7 @@ module.exports = function (app, io) {
 		})
 	});
 
-	app.get('/mun/list/popular', (req, res) => {
+	app.get('/api/mun/list/popular', (req, res) => {
 		var decoded = false;
 		if (req.headers.Authorization) {
 			decoded = jwt.verify(req.headers.Authorization, config.secret);
@@ -35,7 +35,7 @@ module.exports = function (app, io) {
 		})
 	});
 
-	app.get('/mun/bookings', (req, res)=>{
+	app.get('/api/mun/bookings', (req, res)=>{
 		var decoded = false;
 		if (req.headers.Authorization) {
 			decoded = jwt.verify(req.headers.Authorization, config.secret);
@@ -52,7 +52,7 @@ module.exports = function (app, io) {
 		}
 	});
 
-	app.get('/mun/briefcase', (req, res)=>{
+	app.get('/api/mun/briefcase', (req, res)=>{
 		var decoded = false;
 		if (req.headers.Authorization) {
 			decoded = jwt.verify(req.headers.Authorization, config.secret);
